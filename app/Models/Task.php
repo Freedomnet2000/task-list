@@ -9,7 +9,7 @@ class Task extends Model
 {
     use HasFactory;
 
-    protected $guarded =[];
+    protected $guarded = [];
 
 
     public function storeTask(): Task
@@ -21,6 +21,7 @@ class Task extends Model
         return $newTask;
 
     }
+
     public function updateTask(): Task
     {
         $task = self::find($this->taskId);

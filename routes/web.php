@@ -18,8 +18,8 @@ use App\Models\Task;
 */
 
 Route::get('/', function () {
-    return view('tasks.index',[
-        'tasks'=>Task::all()
+    return view('tasks.index', [
+        'tasks' => Task::all()
     ]);
 });
 

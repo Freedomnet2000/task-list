@@ -19,7 +19,6 @@ Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
 });
 
-
 Route::post('/add-task', [TasksController::class, 'store'])->name('task.add');
 Route::post('/delete-task', [TasksController::class, 'delete'])->name('task.delete');
 Route::post('/update-task', [TasksController::class, 'update'])->name('task.update');

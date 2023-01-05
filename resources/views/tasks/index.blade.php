@@ -25,31 +25,42 @@
                             </div>
                         </div>
                         <br>
+
+                        <div class="form-row">
+                            <div class="col-sm">
+                                <div class="col">
+
+                                    <label for="min" class="col-form-label">From Date: </label>
+                                </div>
+                                <input type="text" id="min" name="min">
+                            </div>
+                            <div class="col-sm">
+                                <div class="col">
+
+                                    <label for="max" class="col-form-label">To Date: </label>
+                                </div>
+                                <input type="text" id="max" name="max">
+
+                            </div>
+                            <div class="col-sm">
+                                <label for="statusFilter" class="col-form-label ">Show Status:</label>
+                                <div class="col">
+                                    <select class="custom-select custom-select-sm" id="statusFilter">
+                                        <option selected value="">All</option>
+                                        <option value="active">Active</option>
+                                        <option value="completed">Completed</option>
+                                    </select>
+                                </div>
+                            </div>
+
+                        </div>
+                        <br>
                         <div class="row">
                             <div class="col-sm">
                                 <button type="button" name="btn_add_task" id="btn_add_task" class="btn btn-secondary"
                                         data-card-widget="add">
                                     Add New Task <i class="fa fa-edit"></i>
                                 </button>
-                            </div>
-                            <div class="col-sm">
-                                <label for="min">From Date: </label>
-                                <input type="text" id="min" name="min">
-                            </div>
-                            <div class="col-sm">
-                                <label for="min">To Date: </label>
-                                <input type="text" id="max" name="max">
-                            </div>
-                        </div>
-                        <br>
-                        <div class="form-group row">
-                            <label for="statusFilter" class="col-sm-2 col-form-label">Show Status:</label>
-                            <div class="col-sm-3">
-                                <select class="custom-select " id="statusFilter">
-                                    <option selected value="">All</option>
-                                    <option value="active">Active</option>
-                                    <option value="completed">Completed</option>
-                                </select>
                             </div>
                         </div>
                     </div>

@@ -3,9 +3,8 @@ $(document).ready(function () {
     //Sort table
     $("#tasksMain").tablesorter();
 
-
     // DataTables initialisation
-    var table = $('#tasksMain').DataTable();
+    let table = $('#tasksMain').DataTable();
 
     // Load Adding Task modal
     $("[name='btn_add_task']").click(function () {
@@ -16,11 +15,11 @@ $(document).ready(function () {
     $("#taskAddingForm").submit(function (event) {
         event.preventDefault();
 
-        var $form = $(this);
-        var $inputs = $form.find("input, select, button, textarea");
-        var serializedData = $form.serialize();
+        let $form = $(this);
+        let $inputs = $form.find("input, select, button, textarea");
+        let serializedData = $form.serialize();
         $inputs.prop("disabled", true);
-        var request = $.ajax({
+        let request = $.ajax({
             url: addTaskUrl,
             type: "post",
             data: serializedData
@@ -30,11 +29,9 @@ $(document).ready(function () {
             location.reload();
         });
 
-        request.fail(function (jqXHR, textStatus, errorThrown) {
-            console.error(
-                "The following error occurred: " +
-                textStatus, errorThrown
-            );
+        request.fail(function (data) {
+            let response = JSON.parse(data.responseText);
+            $('#sysMsg').text(response.errors.taskName.toString());
         });
 
         request.always(function () {
@@ -73,11 +70,9 @@ $(document).ready(function () {
             location.reload();
         });
 
-        request.fail(function (jqXHR, textStatus, errorThrown) {
-            console.error(
-                "The following error occurred: " +
-                textStatus, errorThrown
-            );
+        request.fail(function (data) {
+            let response = JSON.parse(data.responseText);
+            $('#updateTaskSysMsg').text(response.errors.taskName.toString());
         });
 
         request.always(function () {
@@ -130,9 +125,9 @@ $(document).ready(function () {
     statusFilter(table);
 
     function statusFilter(table) {
-        var select = $('#statusFilter')
+        let select = $('#statusFilter')
             .on('change', function () {
-                var val = $(this).val();
+                let val = $(this).val();
 
                 table.column(3)
                     .search(val ? '^' + $(this).val() + '$' : val, true, false)
@@ -142,35 +137,31 @@ $(document).ready(function () {
 
     function daterRange(table) {
         // Create date inputs
+        let minDate, maxDate;
+
         minDate = new DateTime($('#min'), {
-            format: 'MMMM Do YYYY'
+            format: 'YYYY-MM-DD'
         });
         maxDate = new DateTime($('#max'), {
-            format: 'MMMM Do YYYY'
+            format: 'YYYY-MM-DD'
         });
 
-
-        // Refilter the table
+        // Re-filter the table
         $('#min, #max').on('change', function () {
             table.draw();
         });
-        var minDate, maxDate;
 
         $.fn.dataTable.ext.search.push(
             function (settings, data, dataIndex) {
-                var min = minDate.val();
-                var max = maxDate.val();
-                var date = new Date(data[2]);
+                let min = minDate.val();
+                let max = maxDate.val();
+                let date = new Date(data[2]);
 
-                if (
-                    (min === null && max === null) ||
+                return (min === null && max === null) ||
                     (min === null && date <= max) ||
                     (min <= date && max === null) ||
-                    (min <= date && date <= max)
-                ) {
-                    return true;
-                }
-                return false;
+                    (min <= date && date <= max);
+
             }
         );
     }

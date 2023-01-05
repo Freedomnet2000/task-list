@@ -1,4 +1,4 @@
-{{-- Hidden Update Modal    --}}
+{{-- Hidden Update Modal   --}}
 <div class="modal fade" id="updateModal" tabindex="-1" role="dialog" aria-labelledby="updateTaskModal"
      aria-hidden="true">
     <div class="modal-dialog" role="document">
