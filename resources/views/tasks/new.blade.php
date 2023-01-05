@@ -13,17 +13,18 @@
                     @csrf
                     <div class="row">
                         <div class="col-md-6">
-
                             <div class="form-group">
                                 <label for="taskName">Task Name
                                     <input type="text" name="taskName" value="" class="form-control">
                                 </label>
+
                                 <input type="hidden" name="taskId" value="" class="form-control">
                                 <label for="dueDate"> Due Date
                                     <input type="date" id="dueDate" name="dueDate"
                                            value="{{ date('Y-m-d') }}"
                                            min="{{ date('Y-m-d') }}" max="{{ now()->addMonths(7)->format('Y-m-d') }}">
                                 </label>
+                                <div class="" id="sysMsg" style="color: red"></div>
                             </div>
                             <div class="form-group">
                                 <input type="submit" class="btn btn-success" value="Submit">

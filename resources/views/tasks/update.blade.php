@@ -1,5 +1,6 @@
 {{-- Hidden Update Modal    --}}
-<div class="modal fade" id="updateModal" tabindex="-1" role="dialog" aria-labelledby="updateTaskModal" aria-hidden="true">
+<div class="modal fade" id="updateModal" tabindex="-1" role="dialog" aria-labelledby="updateTaskModal"
+     aria-hidden="true">
     <div class="modal-dialog" role="document">
         <div class="modal-content">
             <div class="modal-header">
@@ -9,7 +10,7 @@
                 </button>
             </div>
             <div class="modal-body">
-                <form  id="taskUpdateForm">
+                <form id="taskUpdateForm">
                     @csrf
                     <div class="row">
                         <div class="col-md-6">
@@ -31,6 +32,7 @@
                                     <option value="1">Completed</option>
                                 </select>
                             </div>
+                            <div class="" id="updateTaskSysMsg" style="color: red"></div>
                             <div class="form-group">
                                 <input type="submit" class="btn btn-success" value="Submit">
                             </div>
