@@ -33,6 +33,7 @@
                                     <label for="min" class="col-form-label">From Date: </label>
                                 </div>
                                 <input type="text" id="min" name="min">
+                                <i class="fa fa-calendar" aria-hidden="true"></i>
                             </div>
                             <div class="col-sm">
                                 <div class="col">
@@ -40,10 +41,12 @@
                                     <label for="max" class="col-form-label">To Date: </label>
                                 </div>
                                 <input type="text" id="max" name="max">
+                                <i class="fa fa-calendar" aria-hidden="true"></i>
+                                </input>
 
                             </div>
                             <div class="col-sm">
-                                <label for="statusFilter" class="col-form-label ">Show Status:</label>
+                                <label for="statusFilter" class="col-form-label">Show Status:</label>
                                 <div class="col">
                                     <select class="custom-select custom-select-sm" id="statusFilter">
                                         <option selected value="">All</option>
