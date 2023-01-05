@@ -9,13 +9,13 @@ It uses the Starter Kit [Laravel UI](https://github.com/laravel/ui) based on Boo
 Clone this project to your local computer.
 
 ```ps
-https://github.com/Freedomnet2000/task-task.git
+https://github.com/Freedomnet2000/task-list
 ```
 
 Navigate to the project folder.
 
 ```ps
-cd task-task/
+cd task-list/
 ```
 
 Install required packages.
