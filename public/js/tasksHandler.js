@@ -93,7 +93,7 @@ $(document).ready(function () {
         const millisecondsPerDay = 24 * 60 * 60 * 1000;
         const daysDiff = Math.floor((dueDate - CurrentDate) / millisecondsPerDay);
 
-        if ((dueDate < CurrentDate) || (daysDiff <= 6)) {
+        if ((dueDate < CurrentDate) || (daysDiff <= 5)) {
             alert('Deleting task is not allowed , Task Due-Date needs to be more then 6 Days from today ')
             return false;
         }
